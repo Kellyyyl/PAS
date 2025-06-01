@@ -1,1 +1,11 @@
-# PAS
+# PAS Project Semester GENAP KELAS 11. Ta 24-25 Procod Kelly Louis Alpendo kelaa 11 IPA 4
+# WEB Flashcard Bahasa Inggris
+
+Merupakan platform pembelajaran kosakata bahasa Inggris berbasis web yang dirancang menggunakan framework Flask dan menggunakan database SQLite sebagai penyimpanan data. Tujuan utama dari aplikasi ini adalah membantu pengguna, terutama pelajar, dalam menghafal dan mengelompokkan kosakata bahasa Inggris ke dalam berbagai kategori melalui sistem flashcard.
+
+Pada tahap awal penggunaan, pengguna diminta untuk melakukan registrasi akun terlebih dahulu. Proses registrasi ini akan menyimpan informasi username dan password ke dalam database, dengan password yang telah dienkripsi menggunakan metode hashing dari `werkzeug.security`. Setelah berhasil registrasi, pengguna dapat melakukan login dengan data yang telah didaftarkan. Kalau proses login berhasil, pengguna akan diarahkan ke halaman utama di mana mereka dapat melihat seluruh kosakata yang telah mereka tambahkan sebelumnya.
+Fitur utama dari aplikasi ini terletak pada kemampuan untuk menambahkan kata baru. Pengguna dapat memasukkan kata dalam bahasa Inggris, terjemahannya dalam bahasa Indonesia (atau bahasa lain sesuai kebutuhan), serta menentukan kategori dari kata tersebut, seperti 'noun', 'verb', atau 'adjective'. Data kata yang ditambahkan oleh user akan disimpan secara pribadi di database.
+
+Struktur aplikasi ini mengikuti pola Model-View-Controller (MVC). File `app.py` berfungsi sebagai controller yang mengatur alur aplikasi dan juga sebagai model yang mengelola interaksi dengan database SQLite. Seluruh tampilan user disimpan dalam folder `templates`, yang berisi file-file HTML seperti `login.html`, `register.html`, `index.html`, dan `add_word.html`. Sementara itu, folder `static` digunakan untuk menyimpan file CSS yang mempercantik tampilan aplikasi.Secara teknis, aplikasi ini bekerja dengan membuat dua tabel dalam database SQLite, yaitu tabel `users` untuk menyimpan informasi akun, dan tabel `words` untuk menyimpan daftar kosakata yang dikaitkan dengan masing-masing pengguna. 
+
+Aplikasi ini juga telah dilengkapi dengan notifikasi berbasis flash message untuk memberi tahu pengguna apakah suatu proses berhasil dilakukan atau mengalami kesalahan, seperti saat login gagal (pw/nama akun salah )
