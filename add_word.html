@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <h2 class="text-center mb-4">Add New Word</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="english" class="form-label">English Word</label>
+            <input type="text" class="form-control" id="english" name="english" required>
+        </div>
+        <div class="mb-3">
+            <label for="translation" class="form-label">Translation</label>
+            <input type="text" class="form-control" id="translation" name="translation" required>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" id="category" name="category" required>
+                <option value="" selected disabled>Select a category</option>
+                <option value="noun">Noun</option>
+                <option value="verb">Verb</option>
+                <option value="adjective">Adjective</option>
+                <option value="adverb">Adverb</option>
+                <option value="phrase">Phrase</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Add Word</button>
+    </form>
+</div>
+{% endblock %}

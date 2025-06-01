@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center mb-4">Your Flashcards</h1>
+
+{% if words %}
+<div class="card-container">
+    {% for word in words %}
+    <div class="flashcard">
+        <div class="card-front">
+            <div class="card-body text-center">
+                <span class="card-category">{{ word[2] }}</span>
+                <h3>{{ word[0] }}</h3>
+                <p class="text-muted">Click to flip</p>
+            </div>
+        </div>
+        <div class="card-back">
+            <div class="card-body text-center">
+                <h3>{{ word[1] }}</h3>
+                <p>{{ word[0] }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="alert alert-info">
+    You don't have any words yet. <a href="{{ url_for('add_word') }}" class="alert-link">Add your first word</a>.
+</div>
+{% endif %}
+{% endblock %}
